@@ -2302,3 +2302,148 @@ ol {
     height: 600px;
 }
 /*-------contact-area end-------*/
+
+
+/*-------Sign Up Page Start-------*/
+
+
+.form-body{
+    background-color: #ff7700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0 20px 0;
+}
+
+.formContainer{
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 80%;
+}
+
+
+
+.formControl.success input{
+    border-color: #2ecc71;
+}
+
+.formControl.error input{
+    border-color: #e74c3c;
+}
+
+.formControl i{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+
+
+
+
+
+.formControl i.togglePass{
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+    right: -22px;
+  
+  
+  }
+  
+  .formControl i.fa-eye{
+    visibility: visible;
+    transition: all .2s ease-out;
+  }
+  
+  .formControl i.fa-eye-slash{
+    visibility: hidden;
+    transition: all .2s ease-in;
+  }
+.formControl.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.formControl.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.formControl small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.formControl.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form button{
+    background-color: #8e44ad;
+    border: 2px solid #8e44ad;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    width: 100%;
+}
+
+
+.form-header{
+    background-color: #f7f7f7;
+    border-bottom: #f0f0f0;
+    padding: 20px 40px;
+}
+
+
+
+.form-header > h2{
+    margin: 0;
+}
+
+
+.form{
+    padding: 40px 30px;
+}
+
+
+.formControl{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+
+.formControl label{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+
+.formControl input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    width: 100%;
+}
+
+
+
+
+/*-------Sign Up Page End-------*/

@@ -417,3 +417,249 @@
     });
 
 })(jQuery);
+
+
+
+
+// Sign Up Function
+
+const form = document.getElementById('form');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const phoneNumber = document.getElementById('phoneNumber');
+const password = document.getElementById('password');
+const passwordConfirm = document.getElementById('passwordConfirm');
+
+// Function to check  inputs Start
+form.addEventListener('submit', (e) => {
+    if(!checkInputs()){
+        e.preventDefault();
+        return false
+    }else{
+        e.submit()
+        return true
+    }
+});
+
+
+
+// Check Inputs Function 
+
+
+function checkInputs() {
+    // check for inputs value
+
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
+    const phoneNumberValue = phoneNumber.value.trim();
+    const passwordValue = password.value.trim();
+    const passwordConfirmValue = passwordConfirm.value.trim();
+
+
+
+    // Check for First name value
+    if(firstNameValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(firstName, "First name cannot be blank");
+
+    }else{
+        // add success class
+        setSuccessFor(firstName);
+    }
+
+
+
+
+    // Check for Last name value
+    if(lastNameValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(lastName, "Last name cannot be blank");
+
+    }else{
+        // add success class
+        setSuccessFor(lastName);
+    }
+
+
+
+
+    // Check for Email value
+    if(emailValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(email, "Email cannot be blank");
+    }else if(!isEmail(emailValue)){
+        setErrorFor(email, "Email is Not Valid");
+    }else{
+        setSuccessFor(email);
+    }
+
+
+
+
+
+    // Check for Phone number value
+    if(phoneNumberValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(phoneNumber, "Please add a phone number");
+
+    }else{
+        // add success class
+        setSuccessFor(phoneNumber);
+    }
+
+
+
+
+    // Check for Password value
+    if(passwordValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(password, "Password cannot be blank");
+
+    }else{
+        // add success class
+        setSuccessFor(password);
+    }
+
+
+
+
+    // Check for password check value
+    if(passwordConfirmValue === ""){
+        // Show error message
+        // add error class
+        setErrorFor(passwordConfirm, "Please enter password again");
+
+    }else{
+        // add success class
+        setSuccessFor(passwordConfirm);
+    }
+}
+
+
+
+
+
+    // Check for a strong password Start
+    password.onkeyup = function(){
+        const passInput = document.getElementById('password');
+        const passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+
+        if(password.value.match(passw)){
+            setSuccessFor(password);
+        }else{
+            setErrorFor(password, 'Password must contain at least one lowercase letter, one uppercase lette, a number and a minimum of six characters');
+            passInput.style.marginBottom = "30px";
+
+            
+        }
+    }
+    // Check for a strong password End
+
+
+    // Show and hide password function
+    function showPassword1(){
+        if(password.type === "password"){
+            password.type = "text";
+            document.getElementById('eye').style.visibility = "hidden";
+            document.getElementById('eye-slash').style.visibility = "visible";
+        }else{
+            password.type = "password";
+            document.getElementById('eye').style.visibility = "visible";
+            document.getElementById('eye-slash').style.visibility = "hidden";
+        }
+    }
+
+
+
+
+    // Show and hide passwordConfirm function
+    function showPassword2(){
+        if(passwordConfirm.type === "password"){
+            passwordConfirm.type = "text";
+            document.getElementById('eye2').style.visibility = "hidden";
+            document.getElementById('eye-slash2').style.visibility = "visible";
+        }else{
+            passwordConfirm.type = "password";
+            document.getElementById('eye2').style.visibility = "visible";
+            document.getElementById('eye-slash2').style.visibility = "hidden";
+        }
+    }
+
+
+
+
+    // Check if password value matches
+    function checkPass(){
+        const passwordValue = password.value.trim();
+        const passwordConfirmValue = passwordConfirm.value.trim();
+
+
+        if(passwordValue === passwordConfirm){
+            setSuccessFor(password);
+            setSuccessFor(passwordConfirm);
+        }else{
+            setErrorFor(password, 'Password does not match')
+            setErrorFor(passwordConfirm, 'Password does not match')
+        }
+    }
+
+
+
+// Set error function
+
+function setErrorFor(input, message){
+    // .form-control
+
+    const formControl = input.parentElement;
+
+    // Small Element
+
+    const small = formControl.querySelector('small');
+
+
+    // error message
+
+    small.innerText = message;
+
+    // add error class
+
+
+    formControl.className = 'formControl error'
+}
+
+
+// Set Success Function
+
+function setSuccessFor(input){
+    // .form-control
+
+    const formControl = input.parentElement;
+
+
+    
+    // add error class
+
+
+    formControl.className = 'formControl success'
+}
+
+
+
+function isEmail(email){
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+// Function to check  inputs End
+
+
+
+
+
+
