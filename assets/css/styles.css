@@ -2442,8 +2442,75 @@ ol {
     font-family: inherit;
     width: 100%;
 }
-
-
-
-
 /*-------Sign Up Page End-------*/
+
+/*-------About Page End-------*/
+.about-main{
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+
+.about-intro > p{
+    padding: 10px;
+}
+
+
+.about-us{
+    margin: 10px;
+}
+/*-------About Page End-------*/
+
+/*-------Packages Page Start-------*/
+.pk-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+
+.pk-items{
+    margin: 25px;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid #ff7700;
+    border-radius: 15px;
+}
+
+
+.pk-header{
+    margin: 0 10px 20px 10px ;
+    padding: 5px;
+    border-bottom: 3px solid #333;
+}
+
+
+.pk-items > h3{
+    margin: 10px;
+}
+
+.pk-items > p{
+    margin: 5px;
+}
+
+
+.buy-plan{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 768px){
+    .pk-main{
+        flex-direction: column;
+        max-width: 100%;
+    }
+}
+/*-------Packages Page End-------*/
